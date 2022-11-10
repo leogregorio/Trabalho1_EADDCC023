@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<h1 text>
+			Contato
+		</h1>
+	</head>
+	<body>
+        <div class="form-group">            
+            <form name = "login" method="post">
+                <p>
+                    <label for="uname"><b>Nome completo</b></label>
+                </p>
+                <input type="text" placeholder="Insira seu nome" name="nome" required>
+                
+                <p>
+                    <label for="celular"><b>Celular</b></label>
+                </p>
+                <input type="text" data-mask="(00) 0000-0000" pattern="[0-9]" data-mask-selectonfocus="true" placeholder="Insira seu celular" name="celular" required>
+                
+                <p>
+                    <label for="email"><b>E-mail</b></label>
+                </p>
+                <input type="text" placeholder="Insira seu email"  name="email" required>
+    
+                <p>
+                    <label for="email"><b>Mensagem:</b></label>
+                </p>
+                <textarea name="message" placeholder="Insira sua mensagem" rows="10" cols="30"> </textarea>
+                <p>
+                    <button type="submit">Enviar</button>
+                </p>
+            </form>
+        </div>
+	</body>
+</html>

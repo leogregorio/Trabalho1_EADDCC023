@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<h1 text>
+			Cadastro
+		</h1>
+	</head>
+	<body>
+        <div class="container"></div>
+		<form name = "login" method="post">
+			<p>
+				<label for="uname"><b>Nome completo</b></label>
+			</p>
+			<input type="text" placeholder="Insira seu nome" name="nome" required>
+			
+            <p>
+				<label for="cpf"><b>CPF</b></label>
+			</p>
+			<input type="text" placeholder="Insira seu cpf" name="cpf" required>
+			
+            <p>
+				<label for="cpf"><b>Data de nascimento</b></label>
+			</p>
+			<input type="date"  name="nascimento" required>
+
+            <p>
+				<label for="sexo"><b>Sexo</b></label>
+			</p>
+			<select name="sexo" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+            </select>
+
+            <p>
+				<label for="estadocivil"><b>Estado Civil</b></label>
+			</p>
+			<select name="estadocivil" required>
+                <option value="Masculino">Solteiro</option>
+                <option value="Casado">Casado</option>
+                <option value="Separado">Separado</option>
+                <option value="Viúvo">Viúvo</option>     
+            </select>
+
+            <p>
+				<label for="cidade"><b>Cidade</b></label>
+			</p>
+			<input type="text" placeholder="Insira sua cidade" name="cidade" required>
+
+            <p>
+				<label for="estado"><b>Estado</b></label>
+			</p>
+			<input type="text" placeholder="Insira seu estado" name="estado" required>
+
+            <p>
+				<label for="cep"><b>CEP</b></label>
+			</p>
+			<input type="text" placeholder="Insira seu cep" name="cep" required>
+
+            <p>
+				<label for="email"><b>E-mail</b></label>
+			</p>
+			<input type="text" placeholder="Insira seu email"  name="email" required>
+
+            <p>
+				<label for="senha"><b>Senha:</b></label>
+			</p>
+			<input type="password" placeholder="Insira sua senha" name="senha" required>	
+            <p>
+				<label for="senha"><b>Confirmação da Senha:</b></label>
+			</p>
+			<input type="password" placeholder="Repita sua senha" name="senha" required>	
+			
+            
+            <p>
+                <button type="submit">Cadastrar</button>
+            </p>
+            
+		</form>
+        </div>
+	</body>
+</html>
