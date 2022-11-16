@@ -1,21 +1,39 @@
 <html>
 	<head>
-		<h1 text>
-			Login
-		</h1>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./style/style.css">
+		<title>Imperial Palace</title>
 	</head>
 	<body>
-		<form name = "login" method="post">
-			<p>
+		<header>
+			<h1>Imperial Palace</h1>
+		</header>
+		<main>	
+			<h1 text>
+				Login
+			</h1>
+			<form name = "login" method="post">
+				<p>
 
-				<label for="uname"><b>Nome de usuário:</b></label>
-			</p>
-			<input type="text" placeholder="Insira seu login" name="login" required>
-			<p>
-				<label for="senha"><b>Senha:</b></label>
-			</p>
-			<input type="password" placeholder="Insira sua senha" name="senha" required>	
-			<button type="submit">Login</button>
-		</form>
+					<label for="uname"><b>Nome de usuário:</b></label>
+				</p>
+				<input type="text" placeholder="Insira seu login" name="login" required>
+				<p>
+					<label for="senha"><b>Senha:</b></label>
+				</p>
+				<input type="password" placeholder="Insira sua senha" name="senha" required>	
+				<button type="submit"><a href="./pagina_reserva.html">Login</a></button>
+			</form>
+			<p id="cadastro"><a href="./pagina_cadastro.html">Cadastre-se</a></p>
+			<p id="contato"><a href="./pagina_contato.html">Entre em contato conosco</a></p>
+		</main>
+		<footer>
+			<p>Criação e desenvolvimento: Nicholas Cardoso(201865514b), Leonardo Gregório(201865501B)</p>
+		</footer>
 	</body>
 </html>

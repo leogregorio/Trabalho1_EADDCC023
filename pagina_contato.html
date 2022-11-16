@@ -1,35 +1,51 @@
 <html>
 	<head>
-		<h1 text>
-			Contato
-		</h1>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./style/style.css">
+        <title>Imperial Palace - Contato</title>
 	</head>
 	<body>
-        <div class="form-group">            
-            <form name = "login" method="post">
-                <p>
-                    <label for="uname"><b>Nome completo</b></label>
-                </p>
-                <input type="text" placeholder="Insira seu nome" name="nome" required>
-                
-                <p>
-                    <label for="celular"><b>Celular</b></label>
-                </p>
-                <input type="text" data-mask="(00) 0000-0000" pattern="[0-9]" data-mask-selectonfocus="true" placeholder="Insira seu celular" name="celular" required>
-                
-                <p>
-                    <label for="email"><b>E-mail</b></label>
-                </p>
-                <input type="text" placeholder="Insira seu email"  name="email" required>
-    
-                <p>
-                    <label for="email"><b>Mensagem:</b></label>
-                </p>
-                <textarea name="message" placeholder="Insira sua mensagem" rows="10" cols="30"> </textarea>
-                <p>
-                    <button type="submit">Enviar</button>
-                </p>
-            </form>
-        </div>
+        <header>
+			<h1>Imperial Palace</h1>
+		</header>
+        <main>
+            <h1 text>
+                Contato
+            </h1>
+            <div class="form-group">            
+                <form name = "login" method="post">
+                    <p>
+                        <label for="uname"><b>Nome completo</b></label>
+                    </p>
+                    <input type="text" placeholder="Insira seu nome" name="nome" required>
+                    
+                    <p>
+                        <label for="celular"><b>Celular</b></label>
+                    </p>
+                    <input type="text" data-mask="(00) 0000-0000" pattern="[0-9]" data-mask-selectonfocus="true" placeholder="Insira seu celular" name="celular" required>
+                    
+                    <p>
+                        <label for="email"><b>E-mail</b></label>
+                    </p>
+                    <input type="text" placeholder="Insira seu email"  name="email" required>
+        
+                    <p>
+                        <label for="email"><b>Mensagem:</b></label>
+                    </p>
+                    <textarea name="message" placeholder="Insira sua mensagem" rows="10" cols="30"> </textarea>
+                    <p>
+                        <button type="submit">Enviar</button>
+                    </p>
+                </form>
+            </div>
+        </main>
+        <footer>
+			<p>Criação e desenvolvimento: Nicholas Cardoso(201865514b), Leonardo Gregório(201865501B)</p>
+		</footer>
 	</body>
 </html>

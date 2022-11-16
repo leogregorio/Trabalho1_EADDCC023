@@ -1,49 +1,68 @@
 <html>
 	<head>
-		<h1 text>
-			Reserva
-		</h1>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./style/style.css">
+        <title>Imperial Palace - Reservas</title>
 	</head>
-	<body>
-        <div class="form-group">      
-            <form name = "nome" method="post">
+    <body>
+        <header>
+			<h1>Imperial Palace</h1>
+		</header>
+	    <main>
+            <h1 text>
+                Reserva
+            </h1>
+            <div class="form-group">      
+                <form name = "nome" method="post">
 
-            <p>
-                <div style="float:left;padding: 10px;">
                     <p>
-                        <label for="entrada"><b>Data de Entrada</b></label>
-                    </p>
-                    <input type="date"  name="entrada" required>
-                </div>
-    
-                <div style="padding: 10px;">
-                    <p>
-                        <label for="saida"><b>Data de Saída</b></label>
-                    </p>
-                    <input type="date"  name="saida" required>
-                    
-                </div>                
-            </p>
+                        <div style="float:left;padding: 10px;">
+                            <p>
+                                <label for="entrada"><b>Data de Entrada</b></label>
+                            </p>
+                            <input type="date"  name="entrada" required>
+                        </div>
             
+                        <div style="padding: 10px;">
+                            <p>
+                                <label for="saida"><b>Data de Saída</b></label>
+                            </p>
+                            <input type="date"  name="saida" required>
+                            
+                        </div>                
+                    </p>
+                    
 
-            <div style="float:left;padding: 10px;">
-                <p>
-                    <label for="adultos"><b>Quantidade de adultos</b></label>
-                </p>
-                <input type="number"  name="adultos" size="5" maxlength="4" required>
-                <p>
-                    <label for="adultos"><b>Quantidade de crianças de até 3 anos
-                    </b></label>
-                </p>
-                <input type="number"  name="adultos" size="5" maxlength="4" required>
-                <p>
-                    <label for="adultos"><b>quantidade de crianças entre 4 e 12 anos                    </b></label>
-                </p>
-                <input type="number"  name="adultos" size="5" maxlength="4" required>     
-
+                    <div style="float:left;padding: 10px;">
+                        <p>
+                            <label for="adultos"><b>Quantidade de adultos</b></label>
+                        </p>
+                        <input type="number"  name="adultos" size="5" maxlength="4" required>
+                        <p>
+                            <label for="adultos"><b>Quantidade de crianças de até 3 anos
+                            </b></label>
+                        </p>
+                        <input type="number"  name="adultos" size="5" maxlength="4" required>
+                        <p>
+                            <label for="adultos"><b>quantidade de crianças entre 4 e 12 anos </b></label>
+                        </p>
+                        <input type="number"  name="adultos" size="5" maxlength="4" required>     
+                        <p>
+                            <button type="submit">Reservar</button>
+                        </p>
+                        
+                    </div>
+                </form>
             </div>
-        </form>
-        </div>
+        </main>
+        <footer>
+			<p>Criação e desenvolvimento: Nicholas Cardoso(201865514b), Leonardo Gregório(201865501B)</p>
+		</footer>
 	</body>
         
 </html>
