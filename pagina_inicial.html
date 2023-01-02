@@ -1,5 +1,8 @@
 <html>
 	<head>
+		<script 
+            src="src/source.js">            
+        </script>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,21 +20,28 @@
 			<h1 text>
 				Login
 			</h1>
-			<form name = "login" method="post">
-				<p>
 
+			<form id ="login"  method="post" action="" onsubmit = "return ValidarCamposLogin(event);"  >
+				<p>
 					<label for="uname"><b>Nome de usuário:</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu login" name="login" required>
+				<input type="text" id = "email" placeholder="Insira seu email" name="emailinput" required/>
+
+				<p id="result" style="color:red;"></p>
+
 				<p>
 					<label for="senha"><b>Senha:</b></label>
 				</p>
-				<input type="password" placeholder="Insira sua senha" name="senha" required>	
-				<button type="submit"><a href="./pagina_reserva.html">Login</a></button>
+				<input type="password" placeholder="Insira sua senha" name="senhainput" id="senha" required/>	
+				
+				<button type="submit" name = "submitButton" ><a>Login</a></button>
+				<!-- <button type="submit" name = "submitButton" ><a href="./pagina_reserva.html">Login</a></button> -->
 			</form>
+
+
 			<p id="cadastro"><a href="./pagina_cadastro.html">Cadastre-se</a></p>
 			<p id="contato"><a href="./pagina_contato.html">Entre em contato conosco</a></p>
-			<p id="contato"><a href="./pagina_reserva.html">Faça sua reserva</a></p>
+			<p id="reserva"><a href="./pagina_reserva.html">Faça sua reserva</a></p>
 		</main>
 		<footer>
 			<p>Criação e desenvolvimento: Nicholas Cardoso(201865514b), Leonardo Gregório(201865501B)</p>
