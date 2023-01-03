@@ -13,6 +13,33 @@ function ValidarCamposLogin(event)
     
 }
 
+function ValidarCamposCadastro(event)
+{
+    event.preventDefault();
+    var nome = document.getElementById("nome").value;
+    var cpf = document.getElementById("cpf").value;
+    var estado = document.getElementById("estado").value;
+    var cep = document.getElementById("cep").value;
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("senha").value;
+    var confirmaSenha = document.getElementById("confirmaSenha").value;
+
+    var result = "true" ? ( ValidateName(nome) && 
+                            ValidateState(estado) && 
+                            ValidateEmail(email) && 
+                            ValidatePassword(senha, confirmaSenha) &&
+                            ValidateCPF(cpf) &&
+                            email != "" && 
+                            senha != "") 
+                : "false";
+    alert(result);
+    
+    
+    return ValidateEmail(email) && email != "" && senha != "";
+    
+}
+
+
 
 function ValidateEmail(x) {
     var alerta = ""
@@ -65,7 +92,7 @@ function ValidateEmail(x) {
     // var result = document.getElementById(result)
     // result.value = alerta;
     return !erro;   
-  }
+}
 
 function ValidateName(name){
     var erro = false;
@@ -97,9 +124,31 @@ function ValidateName(name){
     return !erro;
 }
 
-
 function ValidateCPF(cpf){
+    return true;
+    
+}
 
+function ValidateState(estado){
+    var erro = false;
+    if(estado.length != 2)
+        erro = true;
+
+    if(!IsLetter(estado[0]) || !IsLetter(estado[1]))
+        erro = true;
+
+    if(IsLowerCase(estado[0]) || IsLowerCase(estado[1]))
+        erro = true;
+    
+    return !erro;
+}
+
+function ValidatePassword(password, confirmPassword)
+{
+    if(password != confirmPassword)
+    {
+        return false;
+    }
 }
 
 function IsLetter(c)
