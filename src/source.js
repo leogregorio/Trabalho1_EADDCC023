@@ -6,11 +6,16 @@ function ValidarCamposLogin(event)
     var email = document.getElementById("email").value;
 
     var validEmail = ValidateEmail(email);
-    var validSenha = senha == "";
+    var validSenha = senha != "";
     
-    result = validEmail && validSenha;   
+    fieldsAreValid = validEmail && validSenha;   
     
-    return result;
+    if(fieldsAreValid)
+    {
+        window.location.href = "./pagina_reserva.html";
+    }
+
+    return fieldsAreValid;
     
 }
 
