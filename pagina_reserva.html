@@ -1,5 +1,8 @@
 <html>
-	<head>
+	<head>       
+        <script 
+            src="src/source.js">            
+        </script>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,20 +22,20 @@
             </h1>
             <div class="form-group">      
                 <form name = "nome" method="post">
-
+                    
                     <p>
                         <div style="float:left;padding: 10px;">
                             <p>
-                                <label for="entrada"><b>Data de Entrada</b></label>
+                                <label for="entrada" ><b>Data de Entrada</b></label>
                             </p>
-                            <input type="date"  name="entrada" required>
+                            <input type="date"  id="entrada" onfocus = "SetDateBoundaryReserva();" onchange = "SetDateBoundaryReserva()" required>
                         </div>
             
                         <div style="padding: 10px;">
                             <p>
                                 <label for="saida"><b>Data de Saída</b></label>
                             </p>
-                            <input type="date"  name="saida" required>
+                            <input type="date"  id="saida" required>
                             
                         </div>                
                     </p>
@@ -42,16 +45,16 @@
                         <p>
                             <label for="adultos"><b>Quantidade de adultos</b></label>
                         </p>
-                        <input type="number"  name="adultos" size="5" maxlength="4" required>
+                        <input type="number"  id="adultos" size="5" maxlength="4" min="1" max="4" required>
                         <p>
                             <label for="adultos"><b>Quantidade de crianças de até 3 anos
                             </b></label>
                         </p>
-                        <input type="number"  name="adultos" size="5" maxlength="4" required>
+                        <input type="number"  id="criancas03" size="5" maxlength="4" min="0" max="3" required>
                         <p>
                             <label for="adultos"><b>Quantidade de crianças entre 4 e 12 anos </b></label>
                         </p>
-                        <input type="number"  name="adultos" size="5" maxlength="4" required>     
+                        <input type="number"  id="criancas412" size="5" maxlength="1" min="0" max="4" required>     
                         <p>
                             <button type="submit">Reservar</button>
                         </p>

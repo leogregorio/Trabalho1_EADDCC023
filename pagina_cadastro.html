@@ -21,32 +21,32 @@
 				Cadastro
 			</h1>
 			<div class="container"></div>
-			<form name = "cadastro" method="post" action="" onsubmit = "return ValidarCamposCadastro(event);">
+			<form name = "cadastro" method="post" action="" onsubmit = "return ValidarCamposCadastro(event);" >
 				<!-- NOME  -->
 				<p>
 					<label for="nome"><b>Nome completo</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu nome" id="nome" >
+				<input type="text" placeholder="Insira seu nome" id="nome" required>
 				<p id="nome-result" style="color:red;"></p>
 
 				<!-- CPF -->
 				<p>
 					<label for="cpf"><b>CPF</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu cpf" id="cpf" >
+				<input type="text" placeholder="Insira seu cpf" id="cpf" required>
 				<p id="cpf-result" style="color:red;"></p>
 
 				<!-- NASCIMENTO -->
 				<p>
 					<label for="nascimento"><b>Data de nascimento</b></label>
 				</p>
-				<input type="date"  id="nascimento" min="1900-01-01" onfocus = "SetDateBoundaryNascimento()">
+				<input type="date"  id="nascimento" min="1900-01-01" onfocus = "SetDateBoundaryNascimento()" required>
 
 				<!-- SEXO -->
 				<p>
 					<label for="sexo"><b>Sexo</b></label>
 				</p>
-				<select name="sexo" >
+				<select name="sexo" required >
 					<option value="Masculino">Masculino</option>
 					<option value="Feminino">Feminino</option>
 				</select>
@@ -55,44 +55,44 @@
 				<p>
 					<label for="estadocivil"><b>Estado Civil</b></label>
 				</p>
-				<select name="estadocivil" >
-					<option value="Masculino">Solteiro</option>
+				<select name="estadocivil" required >
 					<option value="Casado">Casado</option>
-					<option value="Separado">Outros</option>
+					<option value="Solteiro">Solteiro</option>
+					<option value="Outros">Outros</option>
 				</select>
 
 				<!-- CIDADE -->
 				<p>
 					<label for="cidade"><b>Cidade</b></label>
 				</p>
-				<input type="text" placeholder="Insira sua cidade" id="cidade" >
+				<input type="text" placeholder="Insira sua cidade" id="cidade" required>
 
 
 				 <!-- ESTADO -->
 				<p>
 					<label for="estado"><b>Estado</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu estado" id="estado" >
+				<input type="text" placeholder="Insira seu estado" id="estado" required>
 				<p id="estado-result" style="color:red;"></p>
 
 				<!-- CEP -->
 				<p>
 					<label for="cep"><b>CEP</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu cep" id="cep" >
+				<input type="text" placeholder="Insira seu cep" id="cep" required>
 
 				<!-- EMAIL -->
 				<p>
 					<label for="email"><b>E-mail</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu email"  id="email" >
+				<input type="text" placeholder="Insira seu email"  id="email" required>
 				<p id="email-result" style="color:red;"></p>
 
 				<!-- SENHA -->
 				<p>
 					<label for="senha"><b>Senha:</b></label>
 				</p>
-				<input type="password" placeholder="Insira sua senha" id="senha" onkeydown = "AtualizaForcaSenha();" >	
+				<input type="password" placeholder="Insira sua senha" id="senha" oninput = "AtualizaForcaSenha();" required >	
 				<p id="senha-result" style="color:red;"></p>
 				<p id="senha-forca" style="color:white;"></p>
 
@@ -100,7 +100,7 @@
 				<p>
 					<label for="confirmasenha"><b>Confirmação da Senha:</b></label>
 				</p>
-				<input type="password" placeholder="Repita sua senha" id="confirmaSenha" onpaste = "return false" >	
+				<input type="password" placeholder="Repita sua senha" id="confirmaSenha" onpaste = "return false" required>	
 				<p id="confirmasenha-result" style="color:red;"></p>
 				
 				

@@ -100,6 +100,11 @@ function ValidateEmail(x) {
             alerta += "- Ponto não pode ser adjecente a arroba<br/>\n";
             erro = true;  
         }
+        if(x.indexOf('.') == (x.length - 1))
+        {
+            alerta += "- Ponto não pode ser ultimo caractere<br/>\n";
+            erro = true;  
+        }
     }
 
     if(erro)
@@ -123,30 +128,41 @@ function ValidateName(name){
         alerta += "- Pelo menos dois nomes requeridos<br/>\n";
         erro = true;
     }
-    else{
-        for(var i = 0; i < palavras.length; i++)
+    
+    var flag1 = false;
+    var flag2 = false
+    for(var i = 0; i < palavras.length; i++)
+    {
+        if(palavras[i].length < 3)
         {
-            if(palavras[i].length < 3)
-            {
-                alerta += "- Cada nome deve ter no mínimo 3 caracteres<br/>\n";
-                erro = true; 
+            flag1 = true;
+            erro = true; 
+        }
+        
+        
+        var primeiraLetra = palavras[i][0];
+        if(IsLetter(primeiraLetra))
+        {
+            if(IsLowerCase(primeiraLetra)){
+                alert(primeiraLetra)
+                palavras[i][0] = primeiraLetra.toUpperCase();
             }
-
-
-            var primeiraLetra = palavras[i][0];
-            if(IsLetter(primeiraLetra))
-            {
-                if(IsLowerCase(primeiraLetra)){
-                    palavras[i][0] = primeiraLetra.toUpperCase();
-                }
-            } 
-            else
-            {
-                alerta += "- Primeiro caractere de palavra deve ser letra<br/>\n";
-                erro = true; 
-            }
+        } 
+        else
+        {
+            flag2 = true;
+            erro = true; 
         }
     }
+    if(flag1)
+    {
+        alerta += "- Cada nome deve ter no mínimo 3 caracteres<br/>\n";        
+    }
+    if(flag2)
+    {
+        alerta += "- Primeiro caractere de palavra deve ser letra<br/>\n";
+    }
+    
 
     if(erro)
         document.getElementById("nome-result").innerHTML = alerta;
@@ -290,13 +306,14 @@ function CalculaForcaSenha(senha)
     var letrasMaiusculas = senha.replace(/[^A-Z]/g, '');
     var numeros = senha.replace(/[^0-9]/g, '');
     var simbolos = senha.replace(/[a-zA-Z0-9]/g, '');
+    console.log(senha + "\n" + letrasMaiusculas + " " + letrasMinusculas + " " + numeros + " " + simbolos + " ")
 
     if(simbolos.length == 0)
     {
         return "fraca";
     }
 
-    if(simbolos >= 2 && letrasMaiusculas.length > 0 && letrasMinusculas.length > 0 && numeros.length > 0)
+    if(simbolos.length >= 2 && letrasMaiusculas.length > 0 && letrasMinusculas.length > 0 && numeros.length > 0)
     {
         if(IsUnique(simbolos))
         {
@@ -339,8 +356,29 @@ function AtualizaForcaSenha()
 function SetDateBoundaryNascimento()
 {
     var date = document.getElementById("nascimento");
-    date.max = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    date.max = new Date((new Date().getTime() - new Date().getTimezoneOffset() * 60000)).toISOString().split("T")[0];
 }
+
+function SetDateBoundaryReserva()
+{
+    // setando a data minima de reserva
+    var dataMinEntrada = new Date((new Date().getTime() - new Date().getTimezoneOffset() * 60000)+(2*24*60*60*1000)).toISOString().split("T")[0];
+    var dataMinSaida = new Date((new Date().getTime() - new Date().getTimezoneOffset() * 60000)+(4*24*60*60*1000)).toISOString().split("T")[0];
+
+    document.getElementById("entrada").min = dataMinEntrada;
+    
+    var dataEntrada = document.getElementById("entrada").value;
+    var dataMinSaida;
+    if(dataEntrada != "")
+    {
+        var t_dataEntrada = dataEntrada.split('-').join('/');
+        var dataEntrada_ = new Date(t_dataEntrada);
+        dataMinSaida = new Date((dataEntrada_.getTime() - dataEntrada_.getTimezoneOffset() * 60000)+(2*24*60*60*1000)).toISOString().split("T")[0];
+    }
+    
+    document.getElementById("saida").min = dataMinSaida;
+}
+
 
 
 
@@ -364,9 +402,9 @@ function IsNumerical(s)
     return true;
 }
 
-function IsLowerCase(x)
+function IsLowerCase(c)
 {
-    return c === String(c).toLowerCase()
+    return c === c.toLowerCase()
 }
 
 function CountOccurrences(string, subString, allowOverlapping = true) {
