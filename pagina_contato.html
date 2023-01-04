@@ -1,5 +1,8 @@
 <html>
 	<head>
+        <script 
+            src="src/source.js">            
+        </script>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,21 +21,25 @@
                 Contato
             </h1>
             <div class="form-group">            
-                <form name = "login" method="post">
+                <form name = "contato" method="post" action="" onsubmit = "return ValidarCamposContato(event);">
                     <p>
-                        <label for="uname"><b>Nome completo</b></label>
+                        <label for="nome"><b>Nome completo</b></label>
                     </p>
-                    <input type="text" placeholder="Insira seu nome" name="nome" required>
-                    
+                    <input type="text" placeholder="Insira seu nome" id="nome" required>
+                    <p id="nome-result" style="color:red;"></p> 
+
                     <p>
                         <label for="celular"><b>Celular</b></label>
                     </p>
-                    <input type="text"  placeholder="Insira seu celular" name="celular" required>
+                    <input type="tel"  placeholder="Insira seu celular" name="celular"  pattern="([0-9]{2})[0-9]{5}-[0-9]{4}">
+                    <br/>
+                    <small id="celular-formato">Formato: (XX)XXXXX-XXXX</small> 
                     
                     <p>
                         <label for="email"><b>E-mail</b></label>
                     </p>
-                    <input type="text" placeholder="Insira seu email"  name="email" required>
+                    <input type="text" placeholder="Insira seu email"  id="email" required>
+                    <p id="email-result" style="color:red;"></p> 
         
                     <p>
                         <label for="email"><b>Mensagem:</b></label>

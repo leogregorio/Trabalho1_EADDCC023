@@ -1,5 +1,8 @@
 <html>
 	<head>
+		<script 
+			src="src/source.js">            
+		</script>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,78 +21,99 @@
 				Cadastro
 			</h1>
 			<div class="container"></div>
-			<form name = "login" method="post">
+			<form name = "cadastro" method="post" action="" onsubmit = "return ValidarCamposCadastro(event);">
+				<!-- NOME  -->
 				<p>
-					<label for="uname"><b>Nome completo</b></label>
+					<label for="nome"><b>Nome completo</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu nome" name="nome" required>
-				
+				<input type="text" placeholder="Insira seu nome" id="nome" >
+				<p id="nome-result" style="color:red;"></p>
+
+				<!-- CPF -->
 				<p>
 					<label for="cpf"><b>CPF</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu cpf" name="cpf" required>
-				
-				<p>
-					<label for="cpf"><b>Data de nascimento</b></label>
-				</p>
-				<input type="date"  name="nascimento" required>
+				<input type="text" placeholder="Insira seu cpf" id="cpf" >
+				<p id="cpf-result" style="color:red;"></p>
 
+				<!-- NASCIMENTO -->
+				<p>
+					<label for="nascimento"><b>Data de nascimento</b></label>
+				</p>
+				<input type="date"  id="nascimento" min="1900-01-01" onfocus = "SetDateBoundaryNascimento()">
+
+				<!-- SEXO -->
 				<p>
 					<label for="sexo"><b>Sexo</b></label>
 				</p>
-				<select name="sexo" required>
+				<select name="sexo" >
 					<option value="Masculino">Masculino</option>
 					<option value="Feminino">Feminino</option>
 				</select>
 
+				<!-- ESTADO CIVIL -->
 				<p>
 					<label for="estadocivil"><b>Estado Civil</b></label>
 				</p>
-				<select name="estadocivil" required>
+				<select name="estadocivil" >
 					<option value="Masculino">Solteiro</option>
 					<option value="Casado">Casado</option>
 					<option value="Separado">Outros</option>
 				</select>
 
+				<!-- CIDADE -->
 				<p>
 					<label for="cidade"><b>Cidade</b></label>
 				</p>
-				<input type="text" placeholder="Insira sua cidade" name="cidade" required>
+				<input type="text" placeholder="Insira sua cidade" id="cidade" >
 
+
+				 <!-- ESTADO -->
 				<p>
 					<label for="estado"><b>Estado</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu estado" name="estado" required>
+				<input type="text" placeholder="Insira seu estado" id="estado" >
+				<p id="estado-result" style="color:red;"></p>
 
+				<!-- CEP -->
 				<p>
 					<label for="cep"><b>CEP</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu cep" name="cep" required>
+				<input type="text" placeholder="Insira seu cep" id="cep" >
 
+				<!-- EMAIL -->
 				<p>
 					<label for="email"><b>E-mail</b></label>
 				</p>
-				<input type="text" placeholder="Insira seu email"  name="email" required>
+				<input type="text" placeholder="Insira seu email"  id="email" >
+				<p id="email-result" style="color:red;"></p>
 
+				<!-- SENHA -->
 				<p>
 					<label for="senha"><b>Senha:</b></label>
 				</p>
-				<input type="password" placeholder="Insira sua senha" name="senha" required>	
+				<input type="password" placeholder="Insira sua senha" id="senha" onkeydown = "AtualizaForcaSenha();" >	
+				<p id="senha-result" style="color:red;"></p>
+				<p id="senha-forca" style="color:white;"></p>
+
+				<!-- CONFIRMA SENHA -->
 				<p>
-					<label for="senha"><b>Confirmação da Senha:</b></label>
+					<label for="confirmasenha"><b>Confirmação da Senha:</b></label>
 				</p>
-				<input type="password" placeholder="Repita sua senha" name="senha" required>	
+				<input type="password" placeholder="Repita sua senha" id="confirmaSenha" onpaste = "return false" >	
+				<p id="confirmasenha-result" style="color:red;"></p>
 				
 				
 				<p>
-					<button type="submit"><a href="./pagina_inicial.html">Cadastrar</a></button>
+					<button type="submit"><a>Cadastrar</a></button>
+					<!-- <button type="submit"><a href="./pagina_inicial.html">Cadastrar</a></button> -->
 				</p>
 				
 			</form>
 			</div>
 		</main>
 	</body>
-	<footer>
+	<!-- <footer>
 		<p>Criação e desenvolvimento: Nicholas Cardoso(201865514b), Leonardo Gregório(201865501B)</p>
-	</footer>
+	</footer> -->
 </html>
